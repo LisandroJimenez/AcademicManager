@@ -13,7 +13,12 @@ const CourseSchema = Schema(
         status: {
             type: Boolean,
             default: true
+        },
+        students: {
+            type: Schema.Types.ObjectId,
+            ref: 'user'
         }
+        
     },
     {
         timestamps: true,

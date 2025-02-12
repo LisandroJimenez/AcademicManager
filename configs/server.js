@@ -4,7 +4,9 @@ import cors from 'cors'
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
-import limiter from '../src/middlewares/validate-cant-request.js'
+import limiter from '../src/middlewares/validate-cant-request.js';
+import authRoutes from "../src/auth/auth.routes.js";
+
 
 
 const middlewares = (app) =>{
@@ -15,6 +17,10 @@ const middlewares = (app) =>{
     app.use(helmet());
     app.use(morgan('dev'));
     app.use(limiter);
+}
+
+const routes = (app) =>{
+    app.use('/adoptionSystem/v1/auth', authRoutes);
 }
 
 const conectarDB = async() =>{
@@ -32,6 +38,7 @@ export const initServer = async() =>{
  try {
      middlewares(app);
      conectarDB();
+     routes(app);
      app.listen(port);
      console.log(`server running on port ${port}`)
     
