@@ -5,12 +5,12 @@ const UserSchema = Schema(
         name: {
             type: String,
             required: [true, "Name is required"],
-            maxLength: [25, "Cant be overcome 25 characters"]
+            maxLength: [25, "Can't exceed 25 characters"]
         },
         surname: {
             type: String,
             required: [true, "Surname is required"],
-            maxLength: [25, "Cant be overcome 25 characters"]
+            maxLength: [25, "Can't exceed 25 characters"]
         },
         username: {
             type: String,
@@ -34,7 +34,6 @@ const UserSchema = Schema(
         },
         role: {
             type: String,
-            required: false,
             enum: ["STUDENT_ROLE", "TEACHER_ROLE"],
             default: "STUDENT_ROLE"
         },
@@ -42,10 +41,18 @@ const UserSchema = Schema(
             type: Boolean,
             default: true,
         },
-        course: {
-            type: Schema.Types.ObjectId,
-            ref: 'user'
-        }
+        courses: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Course"
+            }
+        ],
+        createdCourses: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Course"
+            }
+        ]
     },
     {
         timestamps: true,
@@ -53,6 +60,4 @@ const UserSchema = Schema(
     }
 );
 
-
-
-export default model('User', UserSchema);
+export default model("User", UserSchema);

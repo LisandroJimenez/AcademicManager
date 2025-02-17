@@ -6,7 +6,8 @@ import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validate-cant-request.js';
 import authRoutes from "../src/auth/auth.routes.js";
-
+import courseRoutes from '../src/courses/course.routes.js';
+import userRoutes from '../src/users/user.routes.js'
 
 
 const middlewares = (app) =>{
@@ -20,7 +21,9 @@ const middlewares = (app) =>{
 }
 
 const routes = (app) =>{
-    app.use('/adoptionSystem/v1/auth', authRoutes);
+    app.use('/academicManager/v1/auth', authRoutes);
+    app.use('/academicManager/v1/courses', courseRoutes);
+    app.use('/academicManager/v1/users', userRoutes);
 }
 
 const conectarDB = async() =>{

@@ -6,7 +6,7 @@ const CourseSchema = Schema(
             type: String,
             required: [true, "Course is required"]
         },
-        description:{
+        description: {
             type: String,
             required: [true, "Description is required"]
         },
@@ -14,16 +14,20 @@ const CourseSchema = Schema(
             type: Boolean,
             default: true
         },
-        students: {
+        keeper: { 
             type: Schema.Types.ObjectId,
-            ref: 'user'
-        }
-        
+            ref: 'User', 
+            required: true 
+        },
+        students: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'  
+        }]
     },
     {
         timestamps: true,
         versionKey: false
     }
-)
+);
 
-export default model('Course', CourseSchema)
+export default model('Course', CourseSchema);
