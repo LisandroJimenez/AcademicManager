@@ -1,0 +1,91 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "USERS-AUTH",
+    "collectionId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+    "dateExported": "2025-02-17T20:45:09.904Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3dca631c-7cea-48e1-823e-31e6f6554938",
+            "colId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+            "containerId": "",
+            "name": "delete-USERS",
+            "url": "http://localhost:3001/academicManager/v1/users/67b3972b973ecde15571e3cf",
+            "method": "DELETE",
+            "sortNum": 625,
+            "created": "2025-02-17T20:39:06.301Z",
+            "modified": "2025-02-17T20:39:06.301Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzOTcyYjk3M2VjZGUxNTU3MWUzY2YiLCJpYXQiOjE3Mzk4MjQwNTQsImV4cCI6MTczOTgyNzY1NH0.hlmKVuZ_jeHMqD7kVqs7lu02SesMGCxsC1MtTul-Roc"
+                }
+            ]
+        },
+        {
+            "_id": "2495a2f1-692e-48e1-85c4-1a815075dec2",
+            "colId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+            "containerId": "",
+            "name": "update-USERS",
+            "url": "http://localhost:3001/academicManager/v1/users/67b3963c973ecde15571e398",
+            "method": "PUT",
+            "sortNum": 1250,
+            "created": "2025-02-17T20:39:04.423Z",
+            "modified": "2025-02-17T20:39:04.423Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"esantos@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "110ebe82-d280-4afa-b5a5-617674b92a0c",
+            "colId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+            "containerId": "",
+            "name": "view-USERS",
+            "url": "http://localhost:3001/academicManager/v1/users",
+            "method": "GET",
+            "sortNum": 2500,
+            "created": "2025-02-17T20:38:59.170Z",
+            "modified": "2025-02-17T20:38:59.170Z",
+            "headers": []
+        },
+        {
+            "_id": "95528ec5-8c9e-4a1e-b664-a231d22fa79d",
+            "colId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+            "containerId": "",
+            "name": "login-USERS",
+            "url": "http://localhost:3001/academicManager/v1/auth/login",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2025-02-17T20:38:53.550Z",
+            "modified": "2025-02-17T20:38:53.550Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"ljimenez@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f651e53c-3ffa-4d0f-8c43-73e2320e446f",
+            "colId": "918571e3-1aea-48f2-8eed-3141f23ae1da",
+            "containerId": "",
+            "name": "register-USER",
+            "url": "http://localhost:3001/academicManager/v1/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-17T20:38:47.890Z",
+            "modified": "2025-02-17T20:38:47.890Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"jemali\",\n  \"surname\":\"jimenez\",\n  \"username\":\"jjimenez\",\n  \"email\":\"jjimenez@gmail.com\",\n  \"password\":\"12345678\",\n  \"phone\":\"12345678\",\n  \"role\":\"STUDENT_ROLE\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "C7PdgVPvEDRLwHdk-Dv4ooKceeK4ro_0ccr03WV81jLnnjgsWJGR3I6p4aXNqTzW-uiFkdKtSldFZ1965GOdtw"
+}

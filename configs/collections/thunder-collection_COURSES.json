@@ -1,0 +1,101 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "COURSES",
+    "collectionId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+    "dateExported": "2025-02-17T20:44:43.588Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c9f8420a-056f-46c7-9165-e54ebcba474c",
+            "colId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+            "containerId": "",
+            "name": "save-COURSES",
+            "url": "http://localhost:3001/academicManager/v1/courses",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-02-17T01:27:22.013Z",
+            "modified": "2025-02-17T20:07:24.788Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzOTY1ODk3M2VjZGUxNTU3MWUzOWMiLCJpYXQiOjE3Mzk4MjI4MDMsImV4cCI6MTczOTgyNjQwM30._R5S9s-s5OseA3j_e8CYGhWcPmxO81DwaO3gPZQO73g"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"tecnologia\",\n  \"description\": \"clase de biologia\",\n  \"email\": \"jcortez@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "1ca59afb-c93f-48c4-89ce-fd8282b67c11",
+            "colId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+            "containerId": "",
+            "name": "view-COURSES",
+            "url": "http://localhost:3001/academicManager/v1/courses",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-02-17T03:27:37.685Z",
+            "modified": "2025-02-17T03:27:46.802Z",
+            "headers": []
+        },
+        {
+            "_id": "d0e9454c-d186-4961-a74d-0b63ff07cf7d",
+            "colId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+            "containerId": "",
+            "name": "delete-COURSES",
+            "url": "http://localhost:3001/academicManager/v1/courses/67b396dc973ecde15571e3b0",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-17T03:38:58.565Z",
+            "modified": "2025-02-17T20:16:44.461Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzOTYzYzk3M2VjZGUxNTU3MWUzOTgiLCJpYXQiOjE3Mzk4MjMzOTQsImV4cCI6MTczOTgyNjk5NH0.Rhc0aj7iV3_8MdQ7bkPGmPIthbQoNy8btJYRsNsGC6E"
+                }
+            ]
+        },
+        {
+            "_id": "e551ca67-7606-4a38-816c-9d08cc38373d",
+            "colId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+            "containerId": "",
+            "name": "update-COURSES",
+            "url": "http://localhost:3001/academicManager/v1/courses/67b396a0973ecde15571e3a4",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2025-02-17T03:58:46.957Z",
+            "modified": "2025-02-17T20:19:42.375Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzOTYzYzk3M2VjZGUxNTU3MWUzOTgiLCJpYXQiOjE3Mzk4MjMxOTUsImV4cCI6MTczOTgyNjc5NX0.3cdfv1Bm2u9tMdPt1TkwBQ2dOXOnapWtQeJlYYI6EUw"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"BIOLOGIA II\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7c5c2e0a-062c-4304-81ca-8903b54792d2",
+            "colId": "d82d5016-6ed6-4298-b7d9-ed3661d2d704",
+            "containerId": "",
+            "name": "asign-COURSES",
+            "url": "http://localhost:3001/academicManager/v1/courses/assign/67b396a0973ecde15571e3a4",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2025-02-17T16:13:52.988Z",
+            "modified": "2025-02-17T20:19:04.602Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzOThiNTk3M2VjZGUxNTU3MWU0MDIiLCJpYXQiOjE3Mzk4MjM1MzgsImV4cCI6MTczOTgyNzEzOH0.xgLVAiXsD3pKyalE_sIiyMDA9vTqrFIk1QgoJUC6ChI"
+                }
+            ]
+        }
+    ],
+    "ref": "KF_omfpO-E0K7iu6Z9F7OlVM32b0CPMf2cHOERtCYGuuo4zVotCjXBt-WNAj5gvZWOGQE4XyxCzAUaLwCZCR-A"
+}

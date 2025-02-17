@@ -42,33 +42,42 @@ export const saveCourse = async (req, res) => {
 
 
 export const getCourses = async (req, res) => {
-    const {limite = 10, desde =0} = req.query;
-    const query = {status : true}
+    const { limite = 10, desde = 0 } = req.query;
     try {
-        const courses = await Course.find(query)
+        const courses = await Course.find({ status: true })
+            .populate({
+                path: "keeper",
+                match: { state: true }, 
+                select: "name"
+            })
+            .populate({
+                path: "students",
+                match: { state: true }, 
+                select: "name"
+            })
             .skip(Number(desde))
-            .limit(Number(limite))
-        const courseWithOwnerNames = await Promise.all(courses.map(async (course) => {
-            const owner = await User.findById(course.keeper)
-            return{
-                ...course.toObject(),
-                keeper: owner ? owner.name: "Owner not found"
-            }
-        }))
-
-        const total = await Course.countDocuments(query)
+            .limit(Number(limite));
+        const filteredCourses = courses.filter(course => course.keeper);
+        const total = filteredCourses.length;
         res.status(200).json({
-            success: true, 
+            success: true,
             total,
-            courses: courseWithOwnerNames
-        })
+            courses: filteredCourses.map(course => ({
+                ...course.toObject(),
+                keeper: course.keeper ? course.keeper.name : "Owner not found",
+                students: course.students.map(student => student.name) 
+            }))
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg: 'Failed to get courses'
-        })
+            msg: "Failed to get courses"
+        });
     }
-}
+};
+
+
+
 
 export const deleteCourse = async (req, res) => {
     try {

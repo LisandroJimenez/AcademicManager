@@ -38,28 +38,51 @@ export const getUsers = async (req = request, res = response) => {
   }
 };
 
-export const updateUser = async (req, res ) => {
-    try {
+export const updateUser = async (req, res) => {
+  try {
       const { id } = req.params;
       const { _id, password, email, ...data } = req.body;
-
-      if(password ){
-          data.password = await hash(password);
+      const user = await User.findById(id);
+      if (!user) {
+          return res.status(404).json({
+              success: false,
+              msg: 'User not found'
+          });
+      }
+      if (email && email !== user.email) {
+          const emailExists = await User.findOne({ email });
+          if (emailExists) {
+              return res.status(400).json({
+                  success: false,
+                  msg: 'Email is already in use by another user'
+              });
+          }
+          user.email = email; 
       }
 
-      const user = await User.findByIdAndUpdate(id, data, { new: true });
+      if (password) {
+          user.password = await hash(password);
+      }
+
+      Object.assign(user, data);
+      await user.save(); 
       res.status(200).json({
           success: true,
-          msg: 'Updated User',
+          msg: 'User updated successfully',
           user
-      })
-    } catch (error) {
-        res.status(500).json({
-            success: false, 
-            msg: 'Error when updating user'
-        })
-    }
-}
+      });
+
+  } catch (error) {
+      console.error(error); 
+      res.status(500).json({
+          success: false,
+          msg: 'Error when updating user',
+          error
+      });
+  }
+};
+
+
 
 export const deleteUser = async (req, res) => {
   try {

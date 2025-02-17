@@ -1,0 +1,118 @@
+[{
+  "_id": {
+    "$oid": "67b3963c973ecde15571e398"
+  },
+  "name": "Elmer",
+  "surname": "Santos",
+  "username": "Esantos",
+  "email": "esantos@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$wvORCi32lQzvXE2Sz2GJiQ$bS98O8kFbYN/H573U9SHOw6DXjWZ2F2adCy6BqSwlds",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "state": true,
+  "courses": [],
+  "createdCourses": [
+    {
+      "$oid": "67b396a0973ecde15571e3a4"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-17T20:04:12.235Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T20:26:26.669Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b39658973ecde15571e39c"
+  },
+  "name": "Jose",
+  "surname": "Cortez",
+  "username": "jcortez",
+  "email": "jcortez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$VSJS66AilDxQYMedwJD68g$yLa3fmfebcvxqsQXucbc9yDm/oPu5bD/eji64ZvSrVs",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "state": true,
+  "courses": [],
+  "createdCourses": [
+    {
+      "$oid": "67b396dc973ecde15571e3b0"
+    },
+    {
+      "$oid": "67b396f7973ecde15571e3bc"
+    },
+    {
+      "$oid": "67b396fc973ecde15571e3c1"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-17T20:04:40.195Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T20:07:24.775Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b3972b973ecde15571e3cf"
+  },
+  "name": "lisandro",
+  "surname": "jimenez",
+  "username": "ljimenez",
+  "email": "ljimenez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$xt3GAP0bSiPqAfJDlrnyfA$hgsXwLs3vwQF2LGnIJeDjAkDC9VG1JPhXN1t+JYhJJ0",
+  "phone": "12345678",
+  "role": "STUDENT_ROLE",
+  "state": true,
+  "courses": [
+    {
+      "$oid": "67b396dc973ecde15571e3b0"
+    },
+    {
+      "$oid": "67b396f7973ecde15571e3bc"
+    },
+    {
+      "$oid": "67b396fc973ecde15571e3c1"
+    },
+    {
+      "$oid": "67b396a0973ecde15571e3a4"
+    }
+  ],
+  "createdCourses": [],
+  "createdAt": {
+    "$date": "2025-02-17T20:08:11.607Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T20:27:40.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b398b5973ecde15571e402"
+  },
+  "name": "jemali",
+  "surname": "jimenez",
+  "username": "jjimenez",
+  "email": "jjimenez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$2tGJJjDGHOPevunKb8lGvg$jndjgYQZG46FJNLSXE3NoUrTOmo7egtZxaa0RU3lDok",
+  "phone": "12345678",
+  "role": "STUDENT_ROLE",
+  "state": true,
+  "courses": [
+    {
+      "$oid": "67b396dc973ecde15571e3b0"
+    },
+    {
+      "$oid": "67b396a0973ecde15571e3a4"
+    }
+  ],
+  "createdCourses": [],
+  "createdAt": {
+    "$date": "2025-02-17T20:14:45.201Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T20:19:04.587Z"
+  }
+}]
