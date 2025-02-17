@@ -121,3 +121,59 @@ export const updateCourse = async (req, res) => {
         });
     }
 };
+
+export const assignToCourse = async (req, res) => {
+    try {
+        const { Id } = req.params; 
+        const userId = req.usuario.id;  
+        const student = await User.findById(userId);
+        if (!student) return res.status(404).json({ 
+            success: false, 
+            msg: "User not found" 
+        });
+
+        if (student.role !== "STUDENT_ROLE") {
+            return res.status(403).json({ 
+                success: false, 
+                msg: "Only students can enroll in courses" 
+            });
+        }
+        const course = await Course.findById(Id);
+        if (!course) return res.status(404).json({ 
+            success: false, 
+            msg: "Course not found" 
+        });
+        const activeCourses = await Course.find({
+            _id: { $in: student.courses },
+            status: true
+        });
+        if (activeCourses.length >= 3) {
+            return res.status(400).json({ 
+                success: false, 
+                msg: "Maximum of 3 active courses allowed" 
+            });
+        }
+        const alreadyEnrolled = course.students.includes(userId);
+        if (alreadyEnrolled) {
+            return res.status(400).json({ 
+                success: false, 
+                msg: "Already enrolled in this course" 
+            });
+        }
+        await Promise.all([
+            Course.findByIdAndUpdate(Id, { $push: { students: userId } }),
+            User.findByIdAndUpdate(userId, { $push: { courses: Id } }),
+        ]);
+        res.status(200).json({ 
+            success: true, 
+            msg: "Enrollment successful" 
+        });
+    } catch (error) {
+        res.status(500).json({ 
+            success: false, 
+            msg: "Server error", 
+            error 
+        });
+    }
+};
+

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { deleteCourse, getCourses, saveCourse, updateCourse } from "./course.controller.js";
+import { deleteCourse, getCourses, saveCourse, updateCourse, assignToCourse} from "./course.controller.js";
 import { validateFields } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 import { hasRole } from "../middlewares/validate-roles.js";
@@ -40,6 +40,14 @@ router.put(
         validateFields
     ],
     updateCourse
+)
+
+router.post(
+    "/assign/:Id",
+    [
+        validateJWT,
+    ],
+    assignToCourse
 )
 
 export default router;
