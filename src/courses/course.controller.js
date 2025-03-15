@@ -82,7 +82,16 @@ export const getCourses = async (req, res) => {
 export const deleteCourse = async (req, res) => {
     try {
         const { id } = req.params
+        const user = req.usuario;
+
+        if (user.role === 'STUDENT_ROLE') {
+            return res.status(403).json({
+                success: false,
+                msg: 'Students are not authorized to update courses'
+            });
+        }
         await Course.findByIdAndUpdate(id, {status: false})
+        
         res.status(200).json({
             success: true,
             message: 'Course successfully removed'
@@ -100,6 +109,14 @@ export const updateCourse = async (req, res) => {
     try {
         const { id } = req.params;
         const { email, _id, ...data } = req.body;
+        const user = req.usuario;
+
+        if (user.role === 'STUDENT_ROLE') {
+            return res.status(403).json({
+                success: false,
+                msg: 'Students are not authorized to update courses'
+            });
+        }
         if (email) {
             const user = await User.findOne({ email });
             if (!user) {

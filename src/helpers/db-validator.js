@@ -2,6 +2,7 @@ import Role from '../role/role.model.js';
 import User from '../users/user.model.js'
 
 export const validRole = async(role = '')=>{
+    if(role === "") return;
     const existRole = await Role.findOne({ role });
     if (!existRole) {
         throw new Error(`Rol ${role} does not exist in the database` );

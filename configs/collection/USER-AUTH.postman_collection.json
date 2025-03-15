@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "9cd0164c-10d8-4651-bb95-bf6f9a502172",
+		"name": "USER-AUTH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42599664"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"DD\",\r\n    \"surname\": \"DD\",\r\n    \"username\": \"DD\",\r\n    \"email\": \"DDDD@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"12345678\",\r\n    \"role\":\"TEACHER_RODLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put-Users",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjIzMDQwYzJhZTZmZGU3ZmRjNGYiLCJpYXQiOjE3NDIwMTQzNjMsImV4cCI6MTc0MjAxNzk2M30.Xw5umQbywVzHf8hQcUwjxtdglk2oNu-MveKypcJdLLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lisandroo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/users/67ca623040c2ae6fde7fdc4f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"users",
+						"67ca623040c2ae6fde7fdc4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ljimenez@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjIzMDQwYzJhZTZmZGU3ZmRjNGYiLCJpYXQiOjE3NDIwMTQwMjgsImV4cCI6MTc0MjAxNzYyOH0.6H5AZMSIdwg01UC5n73J4RgSG7Aq0wHAq4N4fwfT_M8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/users/67ca623040c2ae6fde7fdc4f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"users",
+						"67ca623040c2ae6fde7fdc4f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

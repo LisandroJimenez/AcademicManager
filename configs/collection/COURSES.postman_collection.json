@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "0d381c1a-ed9d-4110-b833-30af71314984",
+		"name": "COURSES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42599664"
+	},
+	"item": [
+		{
+			"name": "Save-Courses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjMwMGMxMjhhZGEyYTI2NjQ1NzEiLCJpYXQiOjE3NDIwMTI1ODgsImV4cCI6MTc0MjAxNjE4OH0.fiU4fT9hQrsOd3lWK9YuvytlWWy3uOuGZoZWXq4yc8c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"mate\",\r\n    \"description\":\"hola\",\r\n    \"email\": \"D@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asign-course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjIzMDQwYzJhZTZmZGU3ZmRjNGYiLCJpYXQiOjE3NDIwMTI5NDQsImV4cCI6MTc0MjAxNjU0NH0.8GDvgjKjbmvmGOVbtmCd700QySpNSNxrGTWSJ9t5d-o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/courses/assign/67d500e35a1a879ee529701a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"courses",
+						"assign",
+						"67d500e35a1a879ee529701a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Course",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjMwMGMxMjhhZGEyYTI2NjQ1NzEiLCJpYXQiOjE3NDIwMTM2NTAsImV4cCI6MTc0MjAxNzI1MH0.afioBZZFHWwL6zFJcRmbXiFWQ19cUr_qDxYkUww09N4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dd\",\r\n    \"description\":\"d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/courses/67d500e35a1a879ee529701a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"courses",
+						"67d500e35a1a879ee529701a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-course",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNjMwMGMxMjhhZGEyYTI2NjQ1NzEiLCJpYXQiOjE3NDIwMTM2NTAsImV4cCI6MTc0MjAxNzI1MH0.afioBZZFHWwL6zFJcRmbXiFWQ19cUr_qDxYkUww09N4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/academicManager/v1/courses/67d500e35a1a879ee529701a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"academicManager",
+						"v1",
+						"courses",
+						"67d500e35a1a879ee529701a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

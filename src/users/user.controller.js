@@ -1,5 +1,6 @@
 import { response } from "express";
 import User from "./user.model.js";
+import { hash } from "argon2"
 
 export const getUsers = async (req = request, res = response) => {
   try {
@@ -42,6 +43,13 @@ export const updateUser = async (req, res) => {
   try {
       const { id } = req.params;
       const { _id, password, email, ...data } = req.body;
+      const authenticatedUser = req.usuario;
+      if (authenticatedUser.id !== id) {
+          return res.status(403).json({
+              success: false,
+              msg: "You can only update your own account"
+          });
+      }
       const user = await User.findById(id);
       if (!user) {
           return res.status(404).json({
@@ -88,7 +96,6 @@ export const deleteUser = async (req, res) => {
   try {
       const { id } = req.params;
       const authenticatedUser = req.usuario;
-      console.log("Authenticated user:", req.usuario);
       if (authenticatedUser.id !== id) {
           return res.status(403).json({
               success: false,
@@ -106,8 +113,7 @@ export const deleteUser = async (req, res) => {
       res.status(200).json({
           success: true,
           msg: 'User deactivated',
-          user,
-          authenticatedUser
+          user
       });
   } catch (error) {
       res.status(500).json({
